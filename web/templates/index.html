@@ -1,0 +1,127 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" href="{% static 'openedu/favicon.png' %}">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>OpenEdu維修中</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.datetimepicker.css' %}"/>
+        <script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500;900&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        *{font-family: 'Noto Sans TC', sans-serif;}
+        body, html {
+          height: 100%;
+          margin: 0;
+          background-color:#58acb1;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          overflow: hidden;
+        }
+        /*Index*/
+        .bg {
+          height: 100%;
+          overflow: hidden;
+        }
+
+        .index_box_h1{
+            font-weight: bold;
+            color: #1E072C;
+        }
+        .index_box_R img{
+            min-width:400px;
+        }
+        .index_box{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            height:50vh;
+        }
+        /*main page*/
+        .bg_main {
+          background-color:#f5f5f5;
+          min-height: 100%
+        }
+        .page_main{
+          padding-top:150px;
+        }
+        .page_box{
+            background-color: white;
+            padding: 20px;
+        }
+        .page_title{
+            text-align: center;
+            color:#633974;
+        }
+        .page_title>h2{
+            font-weight: bold;
+        }
+        .page_btn_zone {
+            height: 45px;
+            text-align: right;
+        }
+        @media (max-width: 765px) {
+        .index_box_R{display: none;
+        }
+        .index_box{text-align: center;}
+        }
+
+        .yellow_block{
+            width: 2000px;
+            height: 800px;
+            color: red;
+            background-color: #e0be73;
+            position: absolute;
+            transform: rotate(30deg);
+            right:-1000px;
+            top:-400px;
+        }
+
+        .blue_block{
+            width: 2000px;
+            height: 800px;
+            color: red;
+            background-color: #477695;
+            position: absolute;
+            transform: rotate(-30deg);
+            right:-500px;
+            bottom:-800px;
+        }
+    </style>
+    <body>
+        <section class="bg">
+            <div class="yellow_block"></div>
+            <div class="blue_block"></div>
+            <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #e7e7e7;">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="/">
+                            <img id="logo" src="{% static 'openedu/OpenEdu_Logo_W.png' %}" style="max-height: 50px; margin-top: 5px;">
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="row page_main">
+                    <div class="col-md-6 index_box">
+                        <div>
+                            <h1 class="index_box_h1">OOPS<br>系統正在維修</h1>
+                            <p>openedu正在維修，請於下午五點後，<br>再過來看看有沒有修好la ^_^</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 index_box index_box_R">
+                        <img src="{% static 'openedu/404logo.png' %}" alt="" width="100%" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
