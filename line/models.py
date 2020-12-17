@@ -1,5 +1,5 @@
 from django.db import models
-from line.views import get_token_status
+from .views import push_notify_text_message, get_token_status
 
 
 class LineNotifyToken(models.Model):
@@ -17,6 +17,9 @@ class LineNotifyToken(models.Model):
             self.display_name = get_token_status(self.token).get('target')
         super().save(*args, **kwargs)
 
+    def push_notify_text_message(self, message):
+        push_notify_text_message(self.token, message)
+
 
 class LineNotifyGroup(models.Model):
     class Meta:
@@ -26,3 +29,7 @@ class LineNotifyGroup(models.Model):
 
     def __str__(self):
         return self.name
+
+    def push_group_message(self, message):
+        for member in self.members.all():
+            member.push_notify_text_message(message)
