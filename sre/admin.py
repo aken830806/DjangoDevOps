@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import GitServer, RepositoryNotify
 
-# Register your models here.
+admin.site.register(GitServer)
+admin.site.register(RepositoryNotify)
